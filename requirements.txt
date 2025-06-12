@@ -8,3 +8,4 @@ flask
 jupyter
 nltk
 tiktoken
+gunicorn

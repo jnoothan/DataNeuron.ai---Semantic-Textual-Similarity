@@ -24,11 +24,15 @@ def similarity():
             text1 = request.form.get("text1")
             text2 = request.form.get("text2")
             if not text1 or not text2:
-                return render_template("similarity.html", similarity_score=None)
+                return render_template("UI.html", similarity_score=None)
             emb1 = model.encode(text1, convert_to_tensor=True)
             emb2 = model.encode(text2, convert_to_tensor=True)
             score = util.cos_sim(emb1, emb2).item()
-            return render_template("similarity.html", similarity_score=score)
+            return render_template("UI.html", similarity_score=score)
 
     # GET request renders the form
-    return render_template("similarity.html")
+    return render_template("UI.html")
+
+
+if __name__=='__main__':
+    app.run(debug=True)
