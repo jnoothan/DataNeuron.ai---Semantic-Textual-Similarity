@@ -1,0 +1,21 @@
+name: Manual Docker Push
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push_image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKERHUB_SECRET }}" | docker login -u noothanms998 --password-stdin
+
+    - name: Build Docker image
+      run: docker build . -t noothanms998/dataneuron_assignment_1:latest
+
+    - name: Push Docker image
+      run: docker push noothanms998/dataneuron_assignment_1:latest
