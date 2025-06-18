@@ -16,5 +16,5 @@ jobs:
     - name: push image to dockerhub
       run: |
         docker login -u noothanms998 -p ${{ secrets.DOCKERHUB_SECRET }}
-        docker push dataneuronapp:latest
+        docker push noothanms998/dataneuron_assignment_1:latest
       
