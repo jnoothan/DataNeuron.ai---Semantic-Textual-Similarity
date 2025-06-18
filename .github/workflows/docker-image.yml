@@ -1,7 +1,7 @@
 name: Docker Image CI
 
 on:
-  push: None
+  workflow_dispatch:
 
 jobs:
   publish_images:
