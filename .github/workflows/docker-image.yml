@@ -1,0 +1,13 @@
+name: Docker Image CI
+
+
+  publish_images:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag dataneuronapp:latest
+    - name: Push image to docker hub
+      run: docker push dataneuronapp:latest
