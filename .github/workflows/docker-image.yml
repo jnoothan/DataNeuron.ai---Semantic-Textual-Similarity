@@ -9,8 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dataneuronapp:latest
+    - name: Build Docker image
+      run: docker build . -t noothanms998/dataneuron_assignment_1:latest
     - name: Push image to docker hub
       run: docker push dataneuronapp:latest
     - name: push image to dockerhub
