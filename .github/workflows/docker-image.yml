@@ -3,14 +3,15 @@ name: Docker Image CI
 jobs:
   publish_images:
     runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v4
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag dataneuronapp:latest
-      - name: Push image to docker hub
-        run: docker push dataneuronapp:latest
-      - name: push image to dockerhub
-        run: |
-          docker login -u noothanms998 -p ${{ secrets.DOCKERHUB_SECRET }}
-          docker push dataneuronapp:latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag dataneuronapp:latest
+    - name: Push image to docker hub
+      run: docker push dataneuronapp:latest
+    - name: push image to dockerhub
+      run: |
+        docker login -u noothanms998 -p ${{ secrets.DOCKERHUB_SECRET }}
+        docker push dataneuronapp:latest
       
