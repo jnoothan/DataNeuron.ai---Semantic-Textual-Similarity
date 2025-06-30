@@ -9,3 +9,5 @@ jupyter
 nltk
 tiktoken
 gunicorn
+wordcloud
+re
