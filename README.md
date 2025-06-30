@@ -105,7 +105,7 @@ python app.py
 The app will run locally on:
 
 ```app
-python app.py
+http://127.0.0.1:5000
 ```
 
 5. Test API
