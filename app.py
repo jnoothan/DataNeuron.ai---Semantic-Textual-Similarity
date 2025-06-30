@@ -5,11 +5,14 @@ import os
 app = Flask(__name__)
 
 try:
+    # Assign the model to predict similarity score
     model = SentenceTransformer("all-mpnet-base-v2")
+    
 except Exception as e:
     print(f"Error loading model: {e}")
     model = None
 
+# API Route for prediction
 @app.route('/', methods=["GET", "POST"])
 def similarity():
     if model is None:
@@ -23,6 +26,8 @@ def similarity():
             text2 = data.get("text2")
             if not text1 or not text2:
                 return jsonify({"error": "Both 'text1' and 'text2' are required."}), 400
+            
+            # Retrieve Similarity Score 
             emb1 = model.encode(text1, convert_to_tensor=True)
             emb2 = model.encode(text2, convert_to_tensor=True)
             score = util.cos_sim(emb1, emb2).item()
@@ -33,6 +38,8 @@ def similarity():
         text2 = request.form.get("text2")
         if not text1 or not text2:
             return render_template("UI.html", similarity_score=None)
+        
+        # Retrieve Similarity Score
         emb1 = model.encode(text1, convert_to_tensor=True)
         emb2 = model.encode(text2, convert_to_tensor=True)
         score = util.cos_sim(emb1, emb2).item()
