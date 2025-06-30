@@ -52,7 +52,6 @@ After exploratory data analysis (EDA), the **average word count per paragraph** 
 
 - The API returns a **cosine similarity score** clipped between `0` and `1`.
 - UI available for testing via HTML form.
-- Performance validated on ~3000 samples with high inference consistency.
 
 ## 📁 Project Structure
 
