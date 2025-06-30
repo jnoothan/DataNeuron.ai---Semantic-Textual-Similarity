@@ -66,6 +66,58 @@ After exploratory data analysis (EDA), the **average word count per paragraph** 
 └── README.md
 ```
 
+## Setup - Locally
+
+Follow these steps to set up the project locally:
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/jnoothan/DataNeuron.ai---Semantic-Textual-Similarity.git
+cd DataNeuron.ai---Semantic-Textual-Similarity
+```
+
+2. Create and Activate Virtual Environment
+
+```bash
+# Create a virtual environment
+python -m venv env
+
+# Activate it (Windows)
+env\Scripts\activate
+
+# On macOS/Linux
+source env/bin/activate
+```
+
+3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the Flask App
+
+```bash
+python app.py
+```
+
+The app will run locally on:
+
+```app
+python app.py
+```
+
+5. Test API
+You can test the API using tools like Postman or curl:
+
+```bash
+curl -X POST http://127.0.0.1:5000 \
+     -H "Content-Type: application/json" \
+     -d '{"text1": "Your first paragraph here.", "text2": "Your second paragraph here."}'
+```
+
+
 ## 📄 Report
 
 Includes problem statement, EDA insights, model benchmarking, deployment methodology, and reasoning behind architectural decisions.
