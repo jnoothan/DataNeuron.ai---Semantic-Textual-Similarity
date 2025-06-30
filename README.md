@@ -74,8 +74,5 @@ Includes problem statement, EDA insights, model benchmarking, deployment methodo
 ## 📌 Author
 
 - Noothana Prasanna
-- Contact: [jnoothan@gmail.com](mailto:jnoothan@gmail.com)
+- Contact: [noothanms998@gmail.com](mailto:noothanms998@gmail.com)
 
----
-
-> 🚀 Deployed Azure Web App: [LIVE ENDPOINT](https://dataneuron.azurewebsites.net/)
